@@ -62,7 +62,7 @@ return [
     |
     | Supported: "database", "eloquent"
     |
-    */
+    */    
 
     'providers' => [
         'users' => [
@@ -98,5 +98,7 @@ return [
             'expire' => 60,
         ],
     ],
+
+
 
 ];
