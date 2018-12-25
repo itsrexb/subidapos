@@ -28,8 +28,43 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * Returns the roles this user currently have
+     *
+     * @return \Illuminate\Support\Collection
+     */
     public function roles()
     {
         return $this->belongsToMany(Role::class);
+    }
+
+    /**
+     * The receivings this user have made
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function receivings()
+    {
+        return $this->hasMany(App\Receiving::class);
+    }
+
+    /**
+     * The adjustments this user have made
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function adjustments()
+    {
+        return $this->hasMany(App\Adjustment::class);
+    }
+
+    /**
+     * The sales this user have processed
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function sales()
+    {
+        return $this->hasMany(App\Sales::class);
     }
 }
