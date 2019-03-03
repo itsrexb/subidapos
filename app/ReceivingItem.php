@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class ReceivingItem extends Model
 {
@@ -13,6 +13,7 @@ class ReceivingItem extends Model
     	'updated_at',
     	'expiration_date', // the expiration date of the item received
     ];
+
 
     /**
      * Returns the receiving this item is associated to

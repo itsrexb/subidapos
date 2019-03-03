@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Unit extends Model
@@ -16,6 +16,7 @@ class Unit extends Model
     	'updated_at',
     	'deleted_at'
     ];
+
 
     /**
      * The stocks on which this unit is being used

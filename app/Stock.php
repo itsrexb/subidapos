@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class Stock extends Model
 {
@@ -12,6 +12,7 @@ class Stock extends Model
     	'created_at',
     	'updated_at',
     ];
+
 
     /**
      * Returns the product on which this stock belongs to

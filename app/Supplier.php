@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Supplier extends Model
@@ -16,6 +16,7 @@ class Supplier extends Model
     	'updated_at',
     	'deleted_at'
     ];
+
 
     /**
      * The receivings made from this supplier

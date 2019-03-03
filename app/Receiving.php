@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class Receiving extends Model
 {
@@ -12,6 +12,7 @@ class Receiving extends Model
     	'created_at',
     	'updated_at',
     ];
+
 
     /**
      * Returns the user responsible for this receving
