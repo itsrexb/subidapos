@@ -22,3 +22,13 @@ Route::get('/dashboard', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/unit', 'UnitController@index')->name('unit');
+Route::get('/unit/new', 'UnitController@newUnit')->name('unit');
+Route::get('/unit/delete/{id}', 'UnitController@destroy');
+Route::post('/unit/new', 'UnitController@storeUnit');
+
+
+Route::get('/suppliers', 'UnitController@index')->name('suppliers');
+Route::get('/recieving', 'UnitController@index')->name('recieving');
+Route::get('/pos', 'UnitController@index')->name('pos');
