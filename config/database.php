@@ -64,7 +64,7 @@ return [
             'username' => env('DB_USERNAME'),
             'password' => env('DB_PASSWORD'),
             'options' => [
-                'ssl' => env('DB_SSL', true),
+                'ssl' => env('DB_SSL', false),
                 'authSource' => 'admin'
             ]
         ],
