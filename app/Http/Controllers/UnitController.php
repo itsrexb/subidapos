@@ -43,6 +43,16 @@ class UnitController extends Controller
     }
 
     /**
+     * edit new unit
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Unit $unit)
+    {
+        return view('unit.edit', compact('unit'));
+    }
+
+    /**
      * Store new unit
      *
      * @return \Illuminate\Http\Response
@@ -55,12 +65,21 @@ class UnitController extends Controller
 			'name'=>'required',
 	        'short_name'=> 'required'
 		]);
-
-		$unit = new Unit([
+		$data = [
 			'name' => $input['name'],
 			'short_name' => $input['short_name'],
 			'description'	=> !empty($input['description']) ? $input['description'] : ''
-		]);
+		];
+		if (empty($input['id'])) {
+			$unit = new Unit($data);
+			$unit->save();
+		} else {
+			$unit = Unit::findOrFail($input['id']);
+			$unit->name = $input['name'];
+			$unit->short_name = $input['short_name'];
+			$unit->description = $input['description'];
+
+		}
 		$unit->save();
 		return redirect('unit')->with('message', 'New unit saved.');
     }
