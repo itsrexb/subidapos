@@ -31,11 +31,17 @@
                     {{ session('status') }}
                 </div>
             @endif
+
+            @guest
+            <div class="row">
+                <div class="col-12">
+            @else
             <div class="row">
                 <div class="col-2">
                     @include('layouts.partials._large_menu')
                 </div>
                 <div class="col-10">
+            @endguest
                     @yield('content')
                 </div>
             </div>
