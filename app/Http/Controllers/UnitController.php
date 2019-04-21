@@ -68,11 +68,10 @@ class UnitController extends Controller
 		$data = [
 			'name' => $input['name'],
 			'short_name' => $input['short_name'],
-			'description'	=> !empty($input['description']) ? $input['description'] : ''
+			'description' => $input['description'] ?? '',
 		];
 		if (empty($input['id'])) {
 			$unit = new Unit($data);
-			$unit->save();
 		} else {
 			$unit = Unit::findOrFail($input['id']);
 			$unit->name = $input['name'];
@@ -96,7 +95,7 @@ class UnitController extends Controller
     	$unit = Unit::find($id);
     	if (!empty($unit)) {
     		$response = $unit->delete();
-    		return redirect('unit')->with('success', '1 unit had been deleted.');
+    		return redirect('unit')->with('success', '1 unit was deleted.');
     	}
         return redirect('unit');
     }

@@ -23,7 +23,7 @@
                                 <tr>
                                     <td>
                                         <a href="/unit/edit/{{ $unit->id }}"><i class="material-icons">create</i></a>
-                                        <a href="/unit/delete/{{ $unit->id }}"><i class="material-icons">remove_circle_outline</i></a>
+                                        <a href="/unit/delete/{{ $unit->id }}"  onclick="if(!confirm('Are you sure to delete this record?')){return false;}"><i class="material-icons">remove_circle_outline</i></a>
                                     </td>
                                     <td>{{$unit->name}}</td>
                                     <td>{{$unit->short_name}}</td>
