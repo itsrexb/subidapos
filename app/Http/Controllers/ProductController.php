@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 
 use App\Product;
+use App\Supplier;
 
 class ProductController extends Controller
 {
@@ -70,7 +71,7 @@ class ProductController extends Controller
 		if (empty($input['id'])) {
 			$product = new Product($data);
 		} else {
-			$product = Supplier::findOrFail($input['id']);
+			$product = Product::findOrFail($input['id']);
 			$product->name = $input['name'];
 			$product->description = $input['description'];
 

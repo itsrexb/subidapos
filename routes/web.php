@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+	return view('welcome');
 });
+
+//Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard/index');
@@ -21,7 +23,7 @@ Route::get('/dashboard', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('/unit', 'UnitController@index')->name('unit');
 Route::get('/unit/new', 'UnitController@newUnit')->name('unit');
@@ -45,4 +47,4 @@ Route::post('/product/new', 'ProductController@store')->name('products');
 Route::post('/product/edit/{product}', 'ProductController@store')->name('products');
 
 Route::get('/recieving', 'UnitController@index')->name('recieving');
-Route::get('/pos', 'UnitController@index')->name('pos');
+//Route::get('/pos', 'UnitController@index')->name('pos');
