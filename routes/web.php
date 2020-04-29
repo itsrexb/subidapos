@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function(){
+Route::get('/{catchall?}', function(){
 	return view('welcome');
-});
+})->where('catchall', '(.*)');
 
 //Route::get('/', 'HomeController@index')->name('home');
 
@@ -24,8 +24,7 @@ Route::get('/dashboard', function () {
 Auth::routes();
 
 
-
-Route::get('/unit', 'UnitController@index')->name('unit');
+/*Route::get('/unit', 'UnitController@index')->name('unit');
 Route::get('/unit/new', 'UnitController@newUnit')->name('unit');
 Route::get('/unit/delete/{id}', 'UnitController@destroy');
 Route::get('/unit/edit/{unit}', 'UnitController@edit');
@@ -48,3 +47,4 @@ Route::post('/product/edit/{product}', 'ProductController@store')->name('product
 
 Route::get('/recieving', 'UnitController@index')->name('recieving');
 //Route::get('/pos', 'UnitController@index')->name('pos');
+*/
